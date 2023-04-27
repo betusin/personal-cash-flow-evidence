@@ -1,0 +1,55 @@
+Requirements:
+- v angličtině
+- přidat, editovat, mazat jednorázový příchod peněz/odchod
+- nastavitelný interval odchodu peněz z účtu
+- 2 typy záznamů - jednorázové platby, , suma, kategorie, datum, do poznámky v jakém je to obchodě | periodické platby - kdy se to opakuje, příjem, odchod, frekvence, kategorie
+- kategorie - může přidat ke každé věci, pouze jedna kategorie ke každé položce
+- chce vidět momentální stav účtu
+- možnost filtrovat podle něčeho ty záznamy, seřadit podle něčeho (podle datumu, třeba jen pro srpen, podle kategorie)
+- útrata za daný čas + kategorie (od kdy do kdy a v tom datumu, ať se to zobrazí)
+- GUI - měla by tam být jednoduchá tabulka výdajů za daný měsíc, tu je možné filtrovat nebo zobrazit výdaje za jiné datum, je tam možné scrollovat, pěkný scrollbar
+- poslední záznamy (třeba 20) v té tabulce, ne za ten daný měsíc
+- třídění podle datumu -> časové rozmezí umí vytvořit ručně
+
+
+Nejdůležitější kategorie:
+1. vyrábět kategorie
+2. záznamy o odchodu peněz
+3. umět filtrovat podle kategorií za daný čas
+
+Pěkný název aplikace, pěknou ikonu, splash screen
+Nakreslit návrh, dáme vědět kdy to pošleme, na dalším callu klikatelné UI
+Oblíbené barvy: černá, teplé barvy, hořčicová
+
+MVP - minimum viable product (project) -  nemusí tam být veškerá funkcionalita, ale to co zákazník považuje za klíčové v tom projektu
+
+---------------------
+2. meeting:
+- Kliknutie na empty space vo filtroch meni filtrovanie
+- Zmizne datum po kliku na riadok transakcie
+- Novo pridana kategoria v dropdowne neexistuje
+- Appku je mozne zmensit prilis - malo by byt vzdy vidno patu (spodok) - nastavit minimalnu velkost appky
+- Nastavit OUT ako default transaction direction pri dialogu na pridanie transakcie
+- TransactionDirection IN & OUT - user friendly labels
+- Tlacitko na novu kategoriu v "Add transaction" okne (aka v dialogovom okne na novu transakciu)
+
+Dalsie poziadavky co mam poznacene z meetingu (Noro):
+- zoznam kategorii, napravo od kazdej kategorie ma byt button na delete a edit 
+- nefunguje filtrovanie podla datumu 
+- Zvolit given period a zobrazi nam kolko nam ostava penazi 
+- 1500czk initial stav hardcode v db (netusite co tato poznamka moze znamenat? :D)
+
+Poznamky z nasho stretka s Tech Leadom:
+- zjednodušiť MainWindow
+- Presun ui veci do jedného packagu
+- Create Top Panel je spageta, veľmi dlha, možno aj do extra triedy
+- categories panel to iste 
+- IsTableIndexVisible premenuj na IsTeansactionVisible
+- Celé filtrovanie daj preč z main Window
+- Switch v modeli table pref
+- stačí ich nastavovať len dialogovym oknom alebo len tou druhou možnosťou 
+- názvy Utils, Tools, Helpers neznáša… zmeň triedu Utils nech dodržuje single responsibíity principle… minimálne ju premenuj 
+- Prerob DeleteCatogoryDialog… zbytočne dedí z Entity Dialóg 
+- premenuj Data na Model
+- Orm klucove principy: životnosť entít a riadenie transakcii 
+- Logovanie, Swing Worker, Lokalizácia a Databáza
